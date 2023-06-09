@@ -48,10 +48,13 @@
         <div class="container is-max-widescreen">
             <div class="notification is-primary hero-body">
                 <label for="search">Search for Recipes:</label>
-                <textarea class="textarea" placeholder="Search Recipes" rows="1"></textarea>
+                <input class="input" type="text" placeholder="Search for Recipes" id="ingr-search">
+                <button type = "submit" class="button is-info is-rounded center-content" id="search-button">Search</button>
             </div>
         </div>
-            <button class="button is-info is-rounded center-content">Favorites</button>
+        <h1 class="container" id = "repo-search-term"></h1>
+        <div id="repo-container">
+        </div>
     </main>
     <footer class="footer footer-position">
         <div class="content has-text-centered">
