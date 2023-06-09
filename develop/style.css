@@ -22,3 +22,15 @@ h2 {
     margin-left: 47%;
     margin-top: 10px;
 }
+#search-button {
+    color: white;
+}
+#ingr-search {
+    color: gray;
+}
+#repo-container {
+    color: black;
+}
+#repo-search-term {
+    color: white;
+}
