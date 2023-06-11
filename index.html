@@ -15,32 +15,33 @@
     <link rel="stylesheet" href="./develop/style.css"/>
     <title>Home Page</title>
   </head>
-    <img  class="official-logo" src="./assets/logo3.png" alt="logo of comendo recipes" />
+    
   <body style="background-color:rgb(196, 255, 226);">
-    <header class="navbar color">
-
-      <div class="container is-fluid">
+      <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color:rgb(196, 255, 226);">
         <div class="navbar-brand">
-            <span class="navbar-burger" data-target="navbarMenuHeroC">
-                <span></span>
-                <span></span>
-                <span></span>
-              </span>
-            </div>
-            <div id="navbarMenuHeroC" class="navbar-menu">
-              <div class="navbar-end">
-                <a class="navbar-item is-active">
-                  Home
-                </a>
-                <a class="navbar-item">
-                  Examples
-                </a>
-                <a class="navbar-item">
-                  Documentation
-                </a>
+          <a class="navbar-item" href="./index.html">
+            <img alt="comendo logo" src="./assets/logo3.png" style = "max-height: 100px" class="py-2 px-2">
+          </a>
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
         </div>
-      </div>
-    </header>
+        <div id="navbarMenuHeroC" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item">
+              Home
+            </a>
+            <a class="navbar-item">
+              Favorites
+            </a>
+            <a class="navbar-item">
+              Documentation
+            </a>
+          </div>
+        </div>
+      </nav>
     <main>
         <div class="aqua-search-bar">
             <div class="notification is-primary hero-body">
