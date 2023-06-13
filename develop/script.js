@@ -4,8 +4,8 @@ var searchButton = document.getElementById('search-button');
 var recipeInput = document.querySelector('#ingr-search');
 var repoContainer = document.querySelector('#repo-container');
 var repoSearchTerm = document.querySelector('#repo-search-term');
-var apiKey = "56471103c10dd6e34e3dab273edd9a51";
-var ident = "732afe70";
+var apiKey = "bce7a54c366b1109bfb579839a177f3f";
+var ident = "a6b042ca";
 
 // second API fetch function for nutrition database
 
@@ -131,32 +131,88 @@ var displayRecipes = function(repos) {
     }
     for (var i = 0; i < 10; i++) {
         //construct recipe card
-        var count = 1;
-        var recipeName = repos[i].recipe.label;
-        var recipeTitle = document.createElement("h1");
-        recipeTitle.classList = "title"
-        recipeTitle.textContent = recipeName;
-        var recipeCard = document.createElement('div');
-        recipeCard.classList = "card";
+        /*
+        <div class="card">
+  <div class="card-image">
+    <figure class="image is-4by3">
+      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+    </figure>
+  </div>
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-48x48">
+          <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-4">John Smith</p>
+        <p class="subtitle is-6">@johnsmith</p>
+      </div>
+    </div>
+
+    <div class="content">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+      <a href="#">#css</a> <a href="#">#responsive</a>
+      <br>
+      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+    </div>
+  </div>
+</div>
+        */
+       var count = 1;
+
+        var recipeCard = document.createElement("div");
+        recipeCard.classList = "card recipe-lining";
+        repoContainer.appendChild(recipeCard);
+
+        var recipeImgContainer = document.createElement("div");
+        recipeImgContainer.classList = "card-image";
+        recipeCard.appendChild(recipeImgContainer);
+        var recipeFigure = document.createElement("figure");
+        recipeFigure.classList = "image is-4by3";
+        recipeImgContainer.appendChild(recipeFigure);
         var recipeImg = document.createElement("img");
         var recipeImgURL = repos[i].recipe.image;
         recipeImg.setAttribute("src", recipeImgURL);
-        var recipeCalory = document.createElement("P");
-        recipeCalory.textContent ="Calories: "+repos[i].recipe.calories;
-        var recipeURL = document.createElement("p");
-        recipeURL.textContent = "URL: "+repos[i].recipe.url;
+        recipeImg.setAttribute("alt", "Picture of the recipe");
+        recipeFigure.appendChild(recipeImg);
 
-        repoContainer.appendChild(recipeCard);
-        recipeCard.appendChild(recipeTitle);
-        recipeCard.appendChild(recipeImg);
-        recipeCard.appendChild(recipeCalory);
+        var cardContent = document.createElement("div");
+        cardContent.classList = "card-content";
+        recipeCard.appendChild(cardContent);
+
+        var titleCaloriesContainer = document.createElement("div");
+        titleCaloriesContainer.classList = "media";
+        cardContent.appendChild(titleCaloriesContainer);
+        var titleCalories = document.createElement("div");
+        titleCalories.classList = "media-content";
+        titleCaloriesContainer.appendChild(titleCalories);
+        var title = document.createElement("p");
+        title.classList = "title is-4";
+        title.textContent = repos[i].recipe.label;
+        var calories = document.createElement("p");
+        calories.classList = "subtitle is-6";
+        calories.textContent = "Calories: "+repos[i].recipe.calories;
+        titleCalories.appendChild(title);
+        titleCalories.appendChild(calories);
+
+        var ingList = document.createElement("div");
+        ingList.classList = "content";
+        var list = " ";
         for (var y = 0; y<repos[i].recipe.ingredientLines.length; y++) {
-            var ingrList = document.createElement("span");
-            ingrList.textContent = count + ".) " + repos[i].recipe.ingredientLines[y]+", ";
-            count++;
-            recipeCard.appendChild(ingrList);
+          list = list + count + ".) " + repos[i].recipe.ingredientLines[y] + " ";
+          count++;
         }
-        recipeCard.appendChild(recipeURL);
+        ingList.textContent = list;
+        cardContent.appendChild(ingList);
+
+        var url = document.createElement("p");
+        url.classList = "content";
+        url.textContent = "URL: "+repos[i].recipe.url;
+        cardContent.appendChild(url);
+
         // recipeCard.append(displayNutrition());
 
 
