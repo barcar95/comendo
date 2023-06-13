@@ -11,41 +11,6 @@ var ident = "a6b042ca";
 
 // have ingredient list from first API pass through ingrSearched
 //
-function getSecondApi(ingr) {
-  var requestUrl = 'https://api.edamam.com/api/nutrition-data?app_id=93da02e5&app_key=52cb23abd54cda3f49dd9d24ff88115e&ingr=';
-  fetch(requestUrl+ingr)
-    .then(function (response) {
-    
-      return response.json();
-    })
-    .then(function (data) {
-    // console.log("")
-    // console.log(data)
-    return data 
-    }
-)}
-
-function displayNutritionData (data, container){
-  console.log(data, container);
-  let dataContainer = document.createElement("ul");
-  let listItem = document.createElement("li");
-  let chocdfKCal = data.totalNutrientsKCal.CHOCDF_KCAL;
-  let energKCal = data.totalNutrientsKCal.ENERC_KCAL;
-
-
-  listItem.innerHTML(`${chocdfKCal.label}: ${chocdfKCal.quantity} ${chocdfKCal.unit} <br> ${energKCal.label}: ${energKCal.quantity} ${energKCal.unit}`);
-  dataContainer.append(listItem);
-  dataContainer.appendTo(container);
-}
-
-function displayNutrition (ingredients) {
-  for (let i = 0; i < ingredients.length; i++) {
-    const element = ingredients[i];
-    getSecondApi(element.food);
-    console.log(element.food);
-    displayNutritionData
-  } 
-}
 // totalNutrientsKCal
 // ENERC_KCAL
 // : 
@@ -104,7 +69,7 @@ function getApi(searchTerm) {
           response.json().then(function (data) {
             console.log(data.hits);
             displayRecipes(data.hits);
-            getSecondApi(searchTerm)
+            saveRecipes(data.hits);
           });
         } else {
           alert('Error: ' + response.statusText);
@@ -129,42 +94,19 @@ var displayRecipes = function(repos) {
         repoContainer.textContent = 'No repositories found.';
         return;
     }
+    var count = 1;
+    var idchange = 1;
     for (var i = 0; i < 10; i++) {
-        //construct recipe card
-        /*
-        <div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-    </figure>
-  </div>
-  <div class="card-content">
-    <div class="media">
-      <div class="media-left">
-        <figure class="image is-48x48">
-          <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-        </figure>
-      </div>
-      <div class="media-content">
-        <p class="title is-4">John Smith</p>
-        <p class="subtitle is-6">@johnsmith</p>
-      </div>
-    </div>
+       var idstring = "recipe-"+idchange;
 
-    <div class="content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-      <a href="#">#css</a> <a href="#">#responsive</a>
-      <br>
-      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-    </div>
-  </div>
-</div>
-        */
-       var count = 1;
-
+        //var recipeLink = document.createElement("a");
         var recipeCard = document.createElement("div");
         recipeCard.classList = "card recipe-lining";
+        recipeCard.setAttribute("id", idstring);
+        idchange++;
+        //recipeLink.setAttribute("href", "./develop/recipe.html")
+        //repoContainer.appendChild(recipeLink);
+        //recipeLink.appendChild(recipeCard);
         repoContainer.appendChild(recipeCard);
 
         var recipeImgContainer = document.createElement("div");
@@ -328,3 +270,41 @@ var displayRecipes = function(repos) {
 // }
 
 searchButton.addEventListener('click', formSubmitHandler);
+
+function saveRecipes(repos) {
+  var recipe1 = document.getElementById('recipe-1');
+  var recipe2 = document.getElementById('recipe-2');
+  var recipe3 = document.getElementById('recipe-3');
+  var recipe4 = document.getElementById('recipe-4');
+  var recipe5 = document.getElementById('recipe-5');
+  var recipe6 = document.getElementById('recipe-6');
+  var recipe7 = document.getElementById('recipe-7');
+  var recipe8 = document.getElementById('recipe-8');
+  var recipe9 = document.getElementById('recipe-9');
+  var recipe10 = document.getElementById('recipe-10');
+
+  recipe1.addEventListener('click', function() {
+    window.localStorage.setItem("recipe", JSON.stringify(repos[0]));
+    window.location.href = "./develop/recipe.html";
+  });
+  recipe2.addEventListener('click', function() {
+    window.localStorage.setItem("recipe", JSON.stringify(repos[1]));
+    window.location.href = "./develop/recipe.html";
+  });
+  recipe3.addEventListener('click', function() {
+    window.localStorage.setItem("recipe", JSON.stringify(repos[2]));
+    window.location.href = "./develop/recipe.html";
+  });
+  recipe4.addEventListener('click', function() {
+    window.localStorage.setItem("recipe", JSON.stringify(repos[3]));
+    window.location.href = "./develop/recipe.html";
+  });
+  recipe5.addEventListener('click', function() {
+    window.localStorage.setItem("recipe", JSON.stringify(repos[4]));
+    window.location.href = "./develop/recipe.html";
+  });
+  recipe6.addEventListener('click', function() {
+    window.localStorage.setItem("recipe", JSON.stringify(repos[5]));
+    window.location.href = "./develop/recipe.html";
+  });
+};
