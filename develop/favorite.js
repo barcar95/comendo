@@ -1,3 +1,4 @@
+
 // favorites array from local storage
 let favArr = JSON.parse(localStorage.getItem("faves")) || [];
 console.log(favArr);
@@ -62,3 +63,6 @@ for (let i = 0; i < favArr.length; i++) {
 
 }
 
+//grabs array of recipe objects from local storage
+//for loop cycles through each item in array and displays it on the page
+//clicking on the recipes will take you to the recipe link page

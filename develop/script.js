@@ -41,9 +41,9 @@ var displayRecipes = function(repos) {
         repoContainer.textContent = 'No repositories found.';
         return;
     }
-    var count = 1;
     var idchange = 1;
     for (var i = 0; i < 10; i++) {
+      var count = 1;
        var idstring = "recipe-"+idchange;
 
       
@@ -95,7 +95,8 @@ var displayRecipes = function(repos) {
         ingList.textContent = list;
         cardContent.appendChild(ingList);
 
-        var url = document.createElement("p");
+        var url = document.createElement("a");
+        url.setAttribute("href", repos[i].recipe.url);
         url.classList = "content";
         url.textContent = "URL: "+repos[i].recipe.url;
         cardContent.appendChild(url);
@@ -147,6 +148,22 @@ function saveRecipes(repos) {
   });
   recipe6.addEventListener('click', function() {
     window.localStorage.setItem("recipe", JSON.stringify(repos[5]));
+    window.location.href = "./develop/recipe.html";
+  });
+  recipe7.addEventListener('click', function() {
+    window.localStorage.setItem("recipe", JSON.stringify(repos[6]));
+    window.location.href = "./develop/recipe.html";
+  });
+  recipe8.addEventListener('click', function() {
+    window.localStorage.setItem("recipe", JSON.stringify(repos[7]));
+    window.location.href = "./develop/recipe.html";
+  });
+  recipe9.addEventListener('click', function() {
+    window.localStorage.setItem("recipe", JSON.stringify(repos[8]));
+    window.location.href = "./develop/recipe.html";
+  });
+  recipe10.addEventListener('click', function() {
+    window.localStorage.setItem("recipe", JSON.stringify(repos[9]));
     window.location.href = "./develop/recipe.html";
   });
 };
