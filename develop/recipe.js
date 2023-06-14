@@ -1,8 +1,15 @@
-//favorite button adds object to end of an array created on favorite screen
-    //  if array empty commit initial array to local storage
-//array committed to local storage after recipe is added
+
+// favorites array from local storage
+let favArr = JSON.parse(localStorage.getItem("faves")) || [];
+// favorites ddrinks array from local storage
+let drinksArr = JSON.parse(localStorage.getItem("drinks")) || [];
+// local stor recipe object
+let recipeObj = JSON.parse(localStorage.getItem("recipe"))
+  console.log(recipeObj);
+
 
 var repoContainer = document.querySelector('#repos-container');
+
 
 function getSecondApi() {
     var requestUrl = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
@@ -12,6 +19,9 @@ function getSecondApi() {
       })
       .then(function (data) {
         console.log(data);
+        // for testing favs array in localstor
+        // drinksArr.push(data.drinks[0])
+        // localStorage.setItem("drinks", JSON.stringify(favArr))
       return data;
       }
   )};

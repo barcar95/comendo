@@ -7,59 +7,6 @@ var repoSearchTerm = document.querySelector('#repo-search-term');
 var apiKey = "bce7a54c366b1109bfb579839a177f3f";
 var ident = "a6b042ca";
 
-// second API fetch function for nutrition database
-
-// have ingredient list from first API pass through ingrSearched
-//
-// totalNutrientsKCal
-// ENERC_KCAL
-// : 
-// label
-// : 
-// "Energy"
-// quantity
-// : 
-// 0
-// unit
-// : 
-// "kcal"
-// [[Prototype]]
-// : 
-// Object
-// FAT_KCAL
-// : 
-// label
-// : 
-// "Calories from fat"
-// quantity
-// : 
-// 0
-// unit
-// : 
-// "kcal"
-// [[Prototype]]
-// : 
-// Object
-// PROCNT_KCAL
-// : 
-// label
-// : 
-// "Calories from protein"
-// quantity
-// : 
-// 0
-// unit
-// : 
-// "kcal"
-// [[Prototype]]
-// : 
-// Object
-// [[Prototype]]
-// : 
-// Object
-// totalWeight
-// : 
-// 0
 
 
 function getApi(searchTerm) {
@@ -99,14 +46,12 @@ var displayRecipes = function(repos) {
       var count = 1;
        var idstring = "recipe-"+idchange;
 
-        //var recipeLink = document.createElement("a");
+      
         var recipeCard = document.createElement("div");
         recipeCard.classList = "card recipe-lining";
         recipeCard.setAttribute("id", idstring);
         idchange++;
-        //recipeLink.setAttribute("href", "./develop/recipe.html")
-        //repoContainer.appendChild(recipeLink);
-        //recipeLink.appendChild(recipeCard);
+      
         repoContainer.appendChild(recipeCard);
 
         var recipeImgContainer = document.createElement("div");
@@ -156,8 +101,6 @@ var displayRecipes = function(repos) {
         url.textContent = "URL: "+repos[i].recipe.url;
         cardContent.appendChild(url);
 
-        // recipeCard.append(displayNutrition());
-
 
         console.log(repos[i].recipe.label);//title of dish
         console.log(repos[i].recipe.image);//picture of dish
@@ -165,109 +108,9 @@ var displayRecipes = function(repos) {
         console.log(repos[i].recipe.ingredientLines);//array of ingrediants
         console.log(repos[i].recipe.calories); //calories in the dish
         console.log(repos[i].recipe.url); //link to website for recipe
-        
     }
 };
-// {
-//   "recipe": {
-//     "uri": "string",
-//     "label": "string",
-//     "image": "string",
-//     "images": {
-//       "THUMBNAIL": {
-//         "url": "string",
-//         "width": 0,
-//         "height": 0
-//       },
-//       "SMALL": {
-//         "url": "string",
-//         "width": 0,
-//         "height": 0
-//       },
-//       "REGULAR": {
-//         "url": "string",
-//         "width": 0,
-//         "height": 0
-//       },
-//       "LARGE": {
-//         "url": "string",
-//         "width": 0,
-//         "height": 0
-//       }
-//     },
-//     "source": "string",
-//     "url": "string",
-//     "shareAs": "string",
-//     "yield": 0,
-//     "dietLabels": [
-//       "string"
-//     ],
-//     "healthLabels": [
-//       "string"
-//     ],
-//     "cautions": [
-//       "string"
-//     ],
-//     "ingredientLines": [
-//       "string"
-//     ],
-//     "ingredients": [
-//       {
-//         "text": "string",
-//         "quantity": 0,
-//         "measure": "string",
-//         "food": "string",
-//         "weight": 0,
-//         "foodId": "string"
-//       }
-//     ],
-//     "calories": 0,
-//     "glycemicIndex": 0,
-//     "totalCO2Emissions": 0,
-//     "co2EmissionsClass": "A+",
-//     "totalWeight": 0,
-//     "cuisineType": [
-//       "string"
-//     ],
-//     "mealType": [
-//       "string"
-//     ],
-//     "dishType": [
-//       "string"
-//     ],
-//     "instructions": [
-//       "string"
-//     ],
-//     "tags": [
-//       "string"
-//     ],
-//     "externalId": "string",
-//     "totalNutrients": {},
-//     "totalDaily": {},
-//     "digest": [
-//       {
-//         "label": "string",
-//         "tag": "string",
-//         "schemaOrgTag": "string",
-//         "total": 0,
-//         "hasRDI": true,
-//         "daily": 0,
-//         "unit": "string",
-//         "sub": {}
-//       }
-//     ]
-//   },
-//   "_links": {
-//     "self": {
-//       "href": "string",
-//       "title": "string"
-//     },
-//     "next": {
-//       "href": "string",
-//       "title": "string"
-//     }
-//   }
-// }
+
 
 searchButton.addEventListener('click', formSubmitHandler);
 
