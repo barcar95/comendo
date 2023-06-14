@@ -1,3 +1,18 @@
+// favorites array from local storage
+let favArr = JSON.parse(localStorage.getItem("faves")) || [];
+// favorites ddrinks array from local storage
+let drinksArr = JSON.parse(localStorage.getItem("drinks")) || [];
+// local stor recipe object
+let recipeObj = JSON.parse(localStorage.getItem("recipe"))
+  console.log(recipeObj);
+
+// for testing favs array in localstor
+// favArr.push(recipeObj)
+// localStorage.setItem("faves", JSON.stringify(favArr))
+
+
+
+
 function getSecondApi() {
     var requestUrl = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
     fetch(requestUrl)
@@ -6,6 +21,9 @@ function getSecondApi() {
       })
       .then(function (data) {
         console.log(data);
+        // for testing favs array in localstor
+        // drinksArr.push(data.drinks[0])
+        // localStorage.setItem("drinks", JSON.stringify(favArr))
       return data;
       }
   )};
