@@ -150,7 +150,8 @@ var displayRecipes = function(repos) {
         ingList.textContent = list;
         cardContent.appendChild(ingList);
 
-        var url = document.createElement("p");
+        var url = document.createElement("a");
+        url.setAttribute("href", repos[i].recipe.url);
         url.classList = "content";
         url.textContent = "URL: "+repos[i].recipe.url;
         cardContent.appendChild(url);
