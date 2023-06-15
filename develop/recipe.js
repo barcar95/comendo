@@ -1,6 +1,3 @@
-
-// favorites array from local storage
-let favArr = JSON.parse(localStorage.getItem("faves")) || [];
 // favorites ddrinks array from local storage
 let drinksArr = JSON.parse(localStorage.getItem("drinks")) || [];
 // local stor recipe object
@@ -52,6 +49,19 @@ function getSecondApi() {
     var recButton = document.createElement("button");
     recButton.classList = "button is-inline-block is-justify-content-end";
     recButton.textContent = "Favorite";
+
+    // fav button functionality
+    recButton.addEventListener("click", function(){
+      
+      let favArr = JSON.parse(localStorage.getItem("faves")) || [];
+      console.log(favArr);
+      favArr.push(recipeObject)
+
+      localStorage.setItem("faves", JSON.stringify(favArr));
+
+    })
+
+
     repoContainer.appendChild(recButton);
     //yield
     var recYield = document.createElement("h3");
