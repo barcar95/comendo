@@ -1,9 +1,3 @@
-// favorites ddrinks array from local storage
-let drinksArr = JSON.parse(localStorage.getItem("drinks")) || [];
-// local stor recipe object
-let recipeObj = JSON.parse(localStorage.getItem("recipe"))
-  console.log(recipeObj);
-
 
 var repoContainer = document.querySelector('#repos-container');
 
@@ -16,9 +10,6 @@ function getSecondApi() {
       })
       .then(function (data) {
         displayDrink(data.drinks[0]);
-        // for testing favs array in localstor
-        // drinksArr.push(data.drinks[0])
-        // localStorage.setItem("drinks", JSON.stringify(favArr))
       return data;
       }
   )};
@@ -26,6 +17,8 @@ function getSecondApi() {
     let newObject = window.localStorage.getItem("recipe");
     console.log(JSON.parse(newObject));
     var recipeObject = JSON.parse(newObject);
+
+    
 
   function displayDrink(drink) {
     console.log(drink)
@@ -43,6 +36,7 @@ function getSecondApi() {
     drinkButton.classList = "button is-inline-block is-justify-content-end";
     drinkButton.textContent = "Favorite";
     repoContainer.appendChild(drinkButton);
+
 
     var drinkName = document.createElement("h1");
     drinkName.textContent = drink.strDrink;
@@ -123,9 +117,19 @@ function getSecondApi() {
             }
           }
         }
+      }
+      
+      drinkButton.addEventListener("click", function(){
+      
+        let drinksArr = JSON.parse(localStorage.getItem("drinks")) || [];
+        console.log(drinksArr);
+        drinksArr.push(drink)
+    
+        localStorage.setItem("drinks", JSON.stringify(drinksArr));
+    
+      })
     }
 
-  }
   
   function displayRecipe (){
     //picture of recipe
