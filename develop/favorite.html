@@ -16,40 +16,43 @@
     <title>Favorites Page</title>
   </head>
 
-  <body class="flex-column min-100-vh">
-    <header class="hero">
-      <h1 class="app-logo">
-        <img src="../assets/logo3.png" alt="logo of comendo recipes" />
-        Your Favorites
-      </h1>
-    </header>
-
-    <main class="flex-row justify-space-between">
-      <div class="col-12 col-md-4">
-        <div class="card">
-          <h3 class="card-header text-uppercase">Search By Recipe</h3>
-          <form id="user-form" class="card-body">
-            <label class="form-label" for="recipes">favorites</label>
-          </form>
-        </div>
-
-        <div class="card">
-          <h3 class="card-header text-uppercase">Search your Way</h3>
-          <div id="language-buttons" class="card-body">
-            <button data-language="javascript" class="btn">JavaScript</button>
-            <button data-language="html" class="btn">HTML</button>
-            <button data-language="css" class="btn">CSS</button>
-          </div>
+  <body style="background-color:rgb(196, 255, 226);">
+    <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color:rgb(196, 255, 226);">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="../index.html">
+          <img alt="comendo logo" src="../assets/logo3.png" style = "max-height: 100px" class="py-2 px-2">
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navbarMenuHeroC" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="./favorite.html">
+            Favorites
+          </a>
         </div>
       </div>
+    </nav>
+
+    <main class="flex-row justify-space-between">
 
       <div class="col-12 col-md-8">
         <h2 class="subtitle">
-          Showing Repositories for: <span id="repo-search-term"></span>
+          Showing Favorites: <span id="repo-search-term"></span>
         </h2>
         <div id="repos-container" class=" recipe-lining list-group"></div>
       </div>
     </main>
+    <footer class="footer footer-position">
+      <div class="content has-text-centered">
+        <p>
+          <strong>Comendo</strong> by The Chefs Boyardee.
+        </p>
+      </div>
+    </footer>
 
     <script src="./favorite.js"></script>
   </body>

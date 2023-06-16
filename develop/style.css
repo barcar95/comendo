@@ -13,6 +13,11 @@ h2 {
     background-color: rgb(196, 255, 226) !important;
 }
 
+.align-right {
+    margin-left: 85% !important;
+    position: absolute !important;
+}
+
 .footer-position {
     bottom: 0;
     width: 100%;
