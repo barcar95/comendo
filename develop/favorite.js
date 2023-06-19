@@ -1,3 +1,11 @@
+//burger menu
+const burgerIcon = document.querySelector('.navbar-burger');
+const navbarMenuHeroC = document.querySelector('#navbarMenuHeroC');
+
+burgerIcon.addEventListener('click', () => {
+  navbarMenuHeroC.classList.toggle('is-active');
+});
+
 // favorites array from local storage
 let favArr = JSON.parse(localStorage.getItem("faves")) || [];
 console.log(favArr);

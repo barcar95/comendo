@@ -16,13 +16,30 @@
     <title>Recipes Page</title>
   </head>
 
-  <body style="background-color:rgb(196, 255, 226);">
-    <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color:rgb(196, 255, 226);">
+  <body style="background-color: rgb(196, 255, 226)">
+    <nav
+      class="navbar"
+      role="navigation"
+      aria-label="main navigation"
+      style="background-color: rgb(196, 255, 226)"
+    >
       <div class="navbar-brand">
         <a class="navbar-item" href="../index.html">
-          <img alt="comendo logo" src="../assets/logo3.png" style = "max-height: 100px" class="py-2 px-2">
+          <img
+            alt="comendo logo"
+            src="../assets/logo3.png"
+            style="max-height: 100px"
+            class="py-2 px-2"
+          />
         </a>
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <a
+          role="button"
+          class="navbar-burger"
+          id="burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -30,27 +47,20 @@
       </div>
       <div id="navbarMenuHeroC" class="navbar-menu">
         <div class="navbar-end">
-          <a class="navbar-item" href="./favorite.html">
-            Favorites
-          </a>
+          <a class="navbar-item" href="./favorite.html"> Favorites </a>
         </div>
       </div>
     </nav>
 
     <main class="flex-row justify-space-between">
-
       <div class="col-12 col-md-8">
-        <h2 class="subtitle">
-          Showing recipe:
-        </h2>
+        <h2 class="subtitle">Showing recipe:</h2>
         <div id="repos-container" class="list-group"></div>
       </div>
     </main>
     <footer class="footer footer-position">
       <div class="content has-text-centered">
-        <p>
-          <strong>Comendo</strong> by The Chefs Boyardee.
-        </p>
+        <p><strong>Comendo</strong> by The Chefs Boyardee.</p>
       </div>
     </footer>
 
