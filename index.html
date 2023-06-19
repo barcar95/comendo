@@ -15,38 +15,36 @@
     <link rel="stylesheet" href="./develop/style.css"/>
     <title>Home Page</title>
   </head>
-    
+
   <body style="background-color:rgb(196, 255, 226);">
-      <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color:rgb(196, 255, 226);">
+    <header class="navbar color">
+      <div class="container is-fluid">
         <div class="navbar-brand">
-          <a class="navbar-item" href="./index.html">
-            <img alt="comendo logo" src="./assets/logo3.png" style = "max-height: 100px" class="py-2 px-2">
-          </a>
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
+            <span class="navbar-burger" id= "burger"data-target="navbarMenuHeroC">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </div>
+            <div id="navbarMenuHeroC" class="navbar-menu">
+              <div class="navbar-end">
+                <a class="navbar-item is-active">
+                  Favorites
+                </a>   
         </div>
-        <div id="navbarMenuHeroC" class="navbar-menu">
-          <div class="navbar-end">
-            <a class="navbar-item" href="./develop/favorite.html">
-              Favorites
-            </a>
-          </div>
-        </div>
-      </nav>
+      </div>
+    </header>
     <main>
-        <div class="aqua-search-bar">
+        <a class="section">
+            <img src="./assets/logo3.png" alt="logo of comendo recipes" />
+        </a>
+        <div class="container is-max-widescreen">
             <div class="notification is-primary hero-body">
                 <label for="search">Search for Recipes:</label>
-                <input class="input" type="text" placeholder="Search for Recipes" id="ingr-search">
-                <button type = "submit" class="button is-info is-rounded center-content" id="search-button">Search</button>
+                <textarea class="textarea" placeholder="Search Recipes" rows="1"></textarea>
             </div>
         </div>
-        <h1 class="container" id = "repo-search-term"></h1>
-        <div id="repo-container">
-        </div>
+            <button id="search-button" class="button is-info is-rounded center-content">Search</button>
     </main>
     <footer class="footer footer-position">
         <div class="content has-text-centered">
