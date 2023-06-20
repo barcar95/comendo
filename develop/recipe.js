@@ -1,3 +1,10 @@
+//burger menu
+const burgerIcon = document.querySelector('#burger');
+const navbarMenuHeroC = document.querySelector('#navbarMenuHeroC');
+
+burgerIcon.addEventListener('click', () => {
+  navbarMenuHeroC.classList.toggle('is-active');
+});
 
 var repoContainer = document.querySelector('#repos-container');
 
