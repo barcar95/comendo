@@ -20,7 +20,7 @@ let repoCon = document.querySelector("#repos-container")
 for (let i = 0; i < favArr.length; i++) {
     const element = favArr[i];
     let card = document.createElement("div")
-    card.setAttribute("class","card")
+    card.setAttribute("class","card recipe-lining")
     let cardHeader = document.createElement("header")
     cardHeader.setAttribute("class", "card-header")
     let title = document.createElement("p")
@@ -73,7 +73,7 @@ for (let i = 0; i < favArr.length; i++) {
 for (let i = 0; i < drinksArr.length; i++) {
     const element = drinksArr[i];
     let card = document.createElement("div")
-    card.setAttribute("class","card")
+    card.setAttribute("class","card recipe-lining")
     let cardHeader = document.createElement("header")
     cardHeader.setAttribute("class", "card-header")
     let title = document.createElement("p")
