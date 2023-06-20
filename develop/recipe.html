@@ -16,12 +16,12 @@
     <title>Recipes Page</title>
   </head>
 
-  <body style="background-color: rgb(196, 255, 226)">
+  <body style="background-color: rgb(214, 214, 214)">
     <nav
       class="navbar"
       role="navigation"
       aria-label="main navigation"
-      style="background-color: rgb(196, 255, 226)"
+      style="background-color: rgb(20, 20, 20)"
     >
       <div class="navbar-brand">
         <a class="navbar-item" href="../index.html">
@@ -47,14 +47,20 @@
       </div>
       <div id="navbarMenuHeroC" class="navbar-menu">
         <div class="navbar-end">
-          <a class="navbar-item" href="./favorite.html"> Favorites </a>
+          <a
+            class="navbar-item"
+            style="color: rgb(196, 0, 0)"
+            href="./favorite.html"
+          >
+            Favorites
+          </a>
         </div>
       </div>
     </nav>
 
-    <main class="flex-row justify-space-between">
-      <div class="col-12 col-md-8">
-        <h2 class="subtitle">Showing recipe:</h2>
+    <main class="flex-row justify-space-between container is 100px">
+      <div class="col-12 col-md-8 has-text-centered">
+        <h2 class="subtitle has-text-centered">Chosen Recipe:</h2>
         <div id="repos-container" class="list-group"></div>
       </div>
     </main>
